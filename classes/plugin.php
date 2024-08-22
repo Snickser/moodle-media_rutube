@@ -47,8 +47,7 @@ class media_rutube_plugin extends core_media_player_external {
 
             // Check against regex.
             if (preg_match($this->get_regex(), $url->out(false), $this->matches)) {
-                // echo serialize($this->matches)."<br>\n";
-
+// echo serialize($this->matches)."<br>\n";
                 $this->isplaylist = false;
                 return [$url];
             }
@@ -87,12 +86,7 @@ class media_rutube_plugin extends core_media_player_external {
 
             $params = ['list' => $playlist];
 
-            // Handle no cookie option.
-            if (!$nocookie) {
-                $embedurl = new moodle_url("https://$site/embed/videoseries", $params);
-            } else {
-                $embedurl = new moodle_url('https://www.rutube-nocookie.com/embed/videoseries', $params);
-            }
+            $embedurl = new moodle_url("https://$site/play/embed/", $params);
             $context['embedurl'] = $embedurl->out(false);
 
             // Return the rendered template.
@@ -116,12 +110,7 @@ class media_rutube_plugin extends core_media_player_external {
             // $params['rel'] = 0;
             // $params['wmode'] = 'transparent';
 
-            // Handle no cookie option.
-            if (!$nocookie) {
-                $embedurl = new moodle_url('https://rutube.ru/play/embed/' . $videoid, $params);
-            } else {
-                $embedurl = new moodle_url('https://www.rutube-nocookie.com/embed/' . $videoid, $params);
-            }
+            $embedurl = new moodle_url('https://rutube.ru/play/embed/' . $videoid, $params);
 
             $context['embedurl'] = $embedurl->out(false);
 
