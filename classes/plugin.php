@@ -48,7 +48,7 @@ class media_rutube_plugin extends core_media_player_external {
             // Check against regex.
             if (preg_match($this->get_regex(), $url->out(false), $this->matches)) {
 
-echo serialize($this->matches)."<br>\n";
+//echo serialize($this->matches)."<br>\n";
 
                 $this->isplaylist = false;
                 return array($url);
