@@ -64,7 +64,6 @@ class media_rutube_plugin extends core_media_player_external {
 
     protected function embed_external(moodle_url $url, $name, $width, $height, $options) {
         global $OUTPUT;
-        $nocookie = get_config('media_rutube', 'nocookie');
 
         $info = trim($name ?? '');
         if (empty($info) or strpos($info, 'http') === 0) {
@@ -94,21 +93,11 @@ class media_rutube_plugin extends core_media_player_external {
         } else {
             $videoid = end($this->matches);
             $params = [];
+
             $start = self::get_start_time($url);
             if ($start > 0) {
-                $params['start'] = $start;
+                $params['t'] = $start;
             }
-
-            $listid = $url->param('list');
-            // Check for non-empty but valid playlist ID.
-            if (!empty($listid) && !preg_match('/[^a-zA-Z0-9\-_]/', $listid)) {
-                // This video is part of a playlist, and we want to embed it as such.
-                $params['list'] = $listid;
-            }
-
-            // Add parameters to object to be passed to the mustache template.
-            // $params['rel'] = 0;
-            // $params['wmode'] = 'transparent';
 
             $embedurl = new moodle_url('https://rutube.ru/play/embed/' . $videoid, $params);
 
@@ -167,7 +156,6 @@ class media_rutube_plugin extends core_media_player_external {
     protected function get_regex() {
         // Regex for standard rutube link.
         $link = '(rutube\.ru/)';
-
         // Initial part of link.
         $start = '~^https?://((www|m)\.)?(' . $link . ')';
         // Middle bit: Video key value.

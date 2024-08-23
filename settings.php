@@ -31,11 +31,4 @@ if ($ADMIN->fulltree) {
         get_string('pluginname', 'media_rutube'),
         get_string('pluginname_help', 'media_rutube')
     ));
-    // Add a settings checkbox to enable or disable no cookie YouTube links.
-    $settings->add(new admin_setting_configcheckbox(
-        'media_rutube/nocookie',
-        new lang_string('nocookie', 'media_rutube'),
-        new lang_string('nocookie_desc', 'media_rutube'),
-        0
-    ));
 }

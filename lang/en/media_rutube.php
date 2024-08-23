@@ -23,9 +23,7 @@
  */
 
 $string['pluginname'] = 'RuTube';
-$string['pluginname_help'] = 'The video-sharing website rutube.com. Video and playlist links are supported.';
+$string['pluginname_help'] = 'The video-sharing website rutube.ru.';
 $string['privacy:metadata'] = 'The rutube media plugin does not store any personal data.';
 $string['supportsvideo'] = 'rutube videos';
 $string['supportsplaylist'] = 'rutube playlists';
-$string['nocookie'] = 'Use no cookie domain';
-$string['nocookie_desc'] = 'Use rutube-nocookie.com domain for embedding videos. This reduces the number of third party cookies used in embedding. This domain is also not blocked by some adblockers.';
