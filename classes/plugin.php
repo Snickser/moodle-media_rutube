@@ -38,6 +38,7 @@ class media_rutube_plugin extends core_media_player_external {
 
     /**
      *
+     * @return array
      */
     public function list_supported_urls(array $urls, array $options = []) {
         // These only work with a SINGLE url (there is no fallback).
