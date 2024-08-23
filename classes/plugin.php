@@ -18,20 +18,21 @@
  * Main class for plugin 'media_rutube'
  *
  * @package   media_rutube
- * @copyright   2024 Alex Orlov <snickser@gmail.com>
+ * @copyright 2024 Alex Orlov <snickser@gmail.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
  * Player that creates rutube embedding.
  *
- * @package   media_rutube
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package media_rutube
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class media_rutube_plugin extends core_media_player_external {
     /**
      * Stores whether the playlist regex was matched last time when
-     * {@link list_supported_urls()} was called
+     * {@link [valid URL] [description (optional)]}
+     *
      * @var bool
      */
     protected $isplaylist = false;
@@ -63,6 +64,7 @@ class media_rutube_plugin extends core_media_player_external {
 
     /**
      *
+     * @return render_from_template
      */
     protected function embed_external(moodle_url $url, $name, $width, $height, $options) {
         global $OUTPUT;
@@ -113,7 +115,8 @@ class media_rutube_plugin extends core_media_player_external {
     /**
      * Check for start time parameter.  Note that it's in hours/mins/secs in the URL,
      * but the embedded player takes only a number of seconds as the "t" parameter.
-     * @param moodle_url $url URL of video to be embedded.
+     *
+     * @param  moodle_url $url URL of video to be embedded.
      * @return int Number of seconds video should start at.
      */
     protected static function get_start_time($url) {
@@ -153,6 +156,7 @@ class media_rutube_plugin extends core_media_player_external {
 
     /**
      * Returns regular expression used to match URLs for single rutube video
+     *
      * @return string PHP regular expression e.g. '~^https?://example.org/~'
      */
     protected function get_regex() {
@@ -167,6 +171,7 @@ class media_rutube_plugin extends core_media_player_external {
 
     /**
      * Returns regular expression used to match URLs for rutube playlist
+     *
      * @return string PHP regular expression e.g. '~^https?://example.org/~'
      */
     protected function get_regex_playlist() {
@@ -186,6 +191,7 @@ class media_rutube_plugin extends core_media_player_external {
 
     /**
      * Default rank
+     *
      * @return int
      */
     public function get_rank() {
