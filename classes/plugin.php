@@ -38,7 +38,8 @@ class media_rutube_plugin extends core_media_player_external {
 
     /**
      *
-     * @return array
+     * @param array $urls
+     * @param array $options
      */
     public function list_supported_urls(array $urls, array $options = []) {
         // These only work with a SINGLE url (there is no fallback).
@@ -63,7 +64,11 @@ class media_rutube_plugin extends core_media_player_external {
 
     /**
      *
-     * @return render_from_template
+     * @param moodle_url[] $urls
+     * @param string $name
+     * @param int $width
+     * @param int $height
+     * @param array $options
      */
     protected function embed_external(moodle_url $url, $name, $width, $height, $options) {
         global $OUTPUT;
