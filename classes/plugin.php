@@ -31,7 +31,6 @@
 class media_rutube_plugin extends core_media_player_external {
     /**
      * Stores whether the playlist regex was matched last time when
-     * {@link [valid URL] [description (optional)]}
      *
      * @var bool
      */
