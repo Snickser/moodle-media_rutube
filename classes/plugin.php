@@ -110,7 +110,7 @@ class media_rutube_plugin extends core_media_player_external {
 
     /**
      * Check for start time parameter.  Note that it's in hours/mins/secs in the URL,
-     * but the embedded player takes only a number of seconds as the "start" parameter.
+     * but the embedded player takes only a number of seconds as the "t" parameter.
      * @param moodle_url $url URL of video to be embedded.
      * @return int Number of seconds video should start at.
      */
