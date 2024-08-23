@@ -30,13 +30,6 @@
  */
 class media_rutube_plugin extends core_media_player_external {
     /**
-     * Stores whether the playlist regex was matched last time when
-     *
-     * @var bool
-     */
-    protected $isplaylist = false;
-
-    /**
      *
      * @param array $urls
      * @param array $options
@@ -52,11 +45,6 @@ class media_rutube_plugin extends core_media_player_external {
                 return [$url];
             }
 
-            // Check against playlist regex.
-            if (preg_match($this->get_regex_playlist(), $url->out(false), $this->matches)) {
-                $this->isplaylist = true;
-                return [$url];
-            }
         }
 
         return [];
@@ -87,18 +75,6 @@ class media_rutube_plugin extends core_media_player_external {
                 'height' => $height,
         ];
 
-        if ($this->isplaylist) {
-            $site = $this->matches[1];
-            $playlist = $this->matches[3];
-
-            $params = ['list' => $playlist];
-
-            $embedurl = new moodle_url("https://$site/play/embed/", $params);
-            $context['embedurl'] = $embedurl->out(false);
-
-            // Return the rendered template.
-            return $OUTPUT->render_from_template('media_rutube/embed', $context);
-        } else {
             $videoid = end($this->matches);
             $params = [];
 
@@ -113,7 +89,6 @@ class media_rutube_plugin extends core_media_player_external {
 
             // Return the rendered template.
             return $OUTPUT->render_from_template('media_rutube/embed', $context);
-        }
     }
 
     /**
@@ -168,21 +143,8 @@ class media_rutube_plugin extends core_media_player_external {
         $link = '(rutube\.ru/)';
         // Initial part of link.
         $start = '~^https?://((www|m)\.)?(' . $link . ')';
-        // Middle bit: Video key value.
+        // Last bit: Video key value.
         $middle = 'video/(private/)?(.*)';
-        return $start . $middle . core_media_player_external::END_LINK_REGEX_PART;
-    }
-
-    /**
-     * Returns regular expression used to match URLs for rutube playlist
-     *
-     * @return string PHP regular expression e.g. '~^https?://example.org/~'
-     */
-    protected function get_regex_playlist() {
-        // Initial part of link.
-        $start = '~^https?://(rutube)?\.ru)/';
-        // Middle bit: either view_play_list?p= or p/ (doesn't work on rutube) or playlist?list=.
-        $middle = '(?:view_play_list\?p=|p/|playlist\?list=)([a-z0-9\-_]+)';
         return $start . $middle . core_media_player_external::END_LINK_REGEX_PART;
     }
 

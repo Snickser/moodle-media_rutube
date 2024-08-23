@@ -17,9 +17,9 @@
 /**
  * Privacy provider implementation for media_rutube.
  *
- * @package    media_rutube
- * @copyright   2024 Alex Orlov <snickser@gmail.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   media_rutube
+ * @copyright 2024 Alex Orlov <snickser@gmail.com>
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 namespace media_rutube\privacy;
@@ -27,14 +27,14 @@ namespace media_rutube\privacy;
 /**
  * Privacy provider implementation for media_rutube.
  *
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class provider implements \core_privacy\local\metadata\null_provider {
     /**
      * Get the language string identifier with the component's language
      * file to explain why this plugin stores no data.
      *
-     * @return  string
+     * @return string
      */
     public static function get_reason(): string {
         return 'privacy:metadata';
