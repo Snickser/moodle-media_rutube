@@ -64,7 +64,7 @@ class media_rutube_plugin extends core_media_player_external {
 
     /**
      *
-     * @param moodle_url $urls
+     * @param moodle_url $url
      * @param string $name
      * @param int $width
      * @param int $height
