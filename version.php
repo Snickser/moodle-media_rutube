@@ -28,3 +28,4 @@ $plugin->version   = 2024082301;      // The current plugin version (Date: YYYYM
 $plugin->requires  = 2023100400;      // Requires this Moodle version.
 $plugin->component = 'media_rutube'; // Full name of the plugin (used for diagnostics).
 $plugin->release   = '0.1';
+$plugin->maturity  = MATURITY_STABLE;
