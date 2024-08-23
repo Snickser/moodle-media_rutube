@@ -44,7 +44,6 @@ class media_rutube_plugin extends core_media_player_external {
                 $this->isplaylist = false;
                 return [$url];
             }
-
         }
 
         return [];
@@ -79,9 +78,9 @@ class media_rutube_plugin extends core_media_player_external {
             $params = [];
 
             $start = self::get_start_time($url);
-            if ($start > 0) {
-                $params['t'] = $start;
-            }
+        if ($start > 0) {
+            $params['t'] = $start;
+        }
 
             $embedurl = new moodle_url('https://rutube.ru/play/embed/' . $videoid, $params);
 
