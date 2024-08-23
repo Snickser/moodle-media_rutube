@@ -18,14 +18,14 @@
  * Version details
  *
  * @package   media_rutube
- * @copyright 2016 Marina Glancy
+ * @copyright 2024 Alex Orlov
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024082301;      // The current plugin version (Date: YYYYMMDDXX).
+$plugin->version   = 2024082302;      // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2023100400;      // Requires this Moodle version.
 $plugin->component = 'media_rutube'; // Full name of the plugin (used for diagnostics).
-$plugin->release   = '0.1';
+$plugin->release   = '0.2';
 $plugin->maturity  = MATURITY_STABLE;

@@ -18,18 +18,14 @@
  * Main class for plugin 'media_rutube'
  *
  * @package   media_rutube
- * @copyright 2016 Marina Glancy
+ * @copyright 2024 Alex Orlov
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-defined('MOODLE_INTERNAL') || die();
 
 /**
  * Player that creates rutube embedding.
  *
  * @package   media_rutube
- * @author    2011 The Open University
- * @copyright 2016 Marina Glancy
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class media_rutube_plugin extends core_media_player_external {
@@ -40,6 +36,9 @@ class media_rutube_plugin extends core_media_player_external {
      */
     protected $isplaylist = false;
 
+    /**
+     *
+     */
     public function list_supported_urls(array $urls, array $options = []) {
         // These only work with a SINGLE url (there is no fallback).
         if (count($urls) == 1) {
@@ -47,7 +46,6 @@ class media_rutube_plugin extends core_media_player_external {
 
             // Check against regex.
             if (preg_match($this->get_regex(), $url->out(false), $this->matches)) {
-// echo serialize($this->matches)."<br>\n";
                 $this->isplaylist = false;
                 return [$url];
             }
@@ -62,11 +60,14 @@ class media_rutube_plugin extends core_media_player_external {
         return [];
     }
 
+    /**
+     *
+     */
     protected function embed_external(moodle_url $url, $name, $width, $height, $options) {
         global $OUTPUT;
 
         $info = trim($name ?? '');
-        if (empty($info) or strpos($info, 'http') === 0) {
+        if (empty($info) || strpos($info, 'http') === 0) {
             $info = get_string('pluginname', 'media_rutube');
         }
         $info = s($info);
@@ -175,6 +176,9 @@ class media_rutube_plugin extends core_media_player_external {
         return $start . $middle . core_media_player_external::END_LINK_REGEX_PART;
     }
 
+    /**
+     *
+     */
     public function get_embeddable_markers() {
         return ['rutube.ru'];
     }

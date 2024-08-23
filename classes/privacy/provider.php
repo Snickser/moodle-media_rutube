@@ -18,18 +18,15 @@
  * Privacy provider implementation for media_rutube.
  *
  * @package    media_rutube
- * @copyright  2018 Mihail Geshoski <mihail@moodle.com>
+ * @copyright 2024 Alex Orlov
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 namespace media_rutube\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Privacy provider implementation for media_rutube.
  *
- * @copyright  2018 Mihail Geshoski <mihail@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class provider implements \core_privacy\local\metadata\null_provider {

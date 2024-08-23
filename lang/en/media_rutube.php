@@ -18,7 +18,7 @@
  * Strings for plugin 'media_rutube'
  *
  * @package   media_rutube
- * @copyright 2016 Marina Glancy
+ * @copyright 2024 Alex Orlov
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
