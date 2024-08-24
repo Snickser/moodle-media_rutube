@@ -72,7 +72,7 @@ class media_rutube_plugin extends core_media_player_external {
         $context = [
                 'width' => $width,
                 'height' => $height,
-                'title' => $info
+                'title' => $info,
         ];
 
         $videoid = end($this->matches);
