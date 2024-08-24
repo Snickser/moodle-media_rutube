@@ -26,6 +26,7 @@
 
     Example context (json):
     {
+        "title": "RuTube",
         "width": 640,
         "height": 360,
         "embedurl": "https://rutube.ru/video/private/8f8a236a768a812a8630d7bd2413fb8f/?p=fzr2AQQZXNl8Ydlc06fKsA&r=plwd"
@@ -34,7 +35,7 @@
 }}
 
 <span class="mediaplugin mediaplugin_rutube responsive-video">
- <iframe width="{{width}}" height="{{height}}" src="{{{embedurl}}}"
-    style="border:0;" allow="autoplay">
+ <iframe title="{{title}}" width="{{width}}" height="{{height}}" style="border:0;"
+   src="{{{embedurl}}}" allow="autoplay">
  </iframe>
 </span>

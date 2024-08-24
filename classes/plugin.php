@@ -72,22 +72,22 @@ class media_rutube_plugin extends core_media_player_external {
         $context = [
                 'width' => $width,
                 'height' => $height,
+                'title' => $info
         ];
 
-            $videoid = end($this->matches);
-            $params = [];
+        $videoid = end($this->matches);
+        $params = [];
 
-            $start = self::get_start_time($url);
+        $start = self::get_start_time($url);
         if ($start > 0) {
             $params['t'] = $start;
         }
 
-            $embedurl = new moodle_url('https://rutube.ru/play/embed/' . $videoid, $params);
+        $embedurl = new moodle_url('https://rutube.ru/play/embed/' . $videoid, $params);
+        $context['embedurl'] = $embedurl->out(false);
 
-            $context['embedurl'] = $embedurl->out(false);
-
-            // Return the rendered template.
-            return $OUTPUT->render_from_template('media_rutube/embed', $context);
+        // Return the rendered template.
+        return $OUTPUT->render_from_template('media_rutube/embed', $context);
     }
 
     /**
