@@ -22,8 +22,8 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname_help'] = 'The video-sharing website rutube.ru.';
 $string['pluginname'] = 'RuTube';
+$string['pluginname_help'] = 'The video-sharing website rutube.ru.';
 $string['privacy:metadata'] = 'The rutube media plugin does not store any personal data.';
 $string['supportsplaylist'] = 'rutube playlists';
 $string['supportsvideo'] = 'rutube videos';
