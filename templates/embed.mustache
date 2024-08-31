@@ -34,8 +34,10 @@
 
 }}
 
-<span class="mediaplugin mediaplugin_rutube responsive-video">
- <iframe title="{{title}}" width="{{width}}" height="{{height}}" style="border:0;"
+<div class="mediaplugin mediaplugin_rutube responsive-video">
+ <div class="py-3" style="height:60vw; max-width:{{width}}px; max-height:{{height}}px;">
+  <iframe title="{{title}}" style="border:0; height:100%; width:100%;"
    src="{{{embedurl}}}" allowFullScreen allow="autoplay">
- </iframe>
-</span>
+  </iframe>
+ </div>
+</div>
