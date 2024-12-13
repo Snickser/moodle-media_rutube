@@ -25,17 +25,12 @@
 defined('MOODLE_INTERNAL') || die();
 
 if ($ADMIN->fulltree) {
-    // Add the settings page.
-    $header = '<div>Новые версии плагина вы можете найти на
- <a href=https://github.com/Snickser/moodle-media_rutube>GitHub.com</a>
- <img src="https://img.shields.io/github/v/release/Snickser/moodle-media_rutube.svg"><br>
- Пожалуйста, отправьте мне немножко <a href="https://yoomoney.ru/fundraise/143H2JO3LLE.240720">доната</a>😊</div>
- <iframe src="https://yoomoney.ru/quickpay/fundraise/button?billNumber=143H2JO3LLE.240720"
- width="330" height="50" frameborder="0" allowtransparency="true" scrolling="no"></iframe>';
+    $plugininfo = \core_plugin_manager::instance()->get_plugin_info('media_rutube');
+    $donate = get_string('donate', 'media_rutube', $plugininfo);
 
     $settings->add(new admin_setting_heading(
         'media_rutube_settings',
-        $header,
+        $donate,
         get_string('pluginname_help', 'media_rutube')
     ));
 }
