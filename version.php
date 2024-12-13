@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024121300;      // The current plugin version (Date: YYYYMMDDXX).
+$plugin->version   = 2024121301;      // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2020061500;      // Requires this Moodle version.
 $plugin->component = 'media_rutube'; // Full name of the plugin (used for diagnostics).
 $plugin->release   = '0.8';
