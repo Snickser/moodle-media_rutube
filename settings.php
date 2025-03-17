@@ -30,7 +30,7 @@ if ($ADMIN->fulltree) {
 
     $settings->add(new admin_setting_heading(
         'media_rutube_settings',
+        get_string('pluginname_help', 'media_rutube'),
         $donate,
-        get_string('pluginname_help', 'media_rutube')
     ));
 }
