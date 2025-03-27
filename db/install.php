@@ -22,6 +22,11 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+/**
+ * Enabler
+ *
+ * @return boolean
+ */
 function xmldb_media_rutube_install() {
     global $CFG;
 
