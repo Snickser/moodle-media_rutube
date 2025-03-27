@@ -24,8 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-global $CFG;
-
 if ($ADMIN->fulltree) {
     $plugininfo = \core_plugin_manager::instance()->get_plugin_info('media_rutube');
     $donate = get_string('donate', 'media_rutube', $plugininfo);
