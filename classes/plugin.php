@@ -30,6 +30,13 @@
  */
 class media_rutube_plugin extends core_media_player_external {
     /**
+     * Stores whether the playlist regex was matched last time when
+     * {@link list_supported_urls()} was called
+     * @var bool
+     */
+    protected $isplaylist = false;
+
+    /**
      *
      * @param array $urls
      * @param array $options
